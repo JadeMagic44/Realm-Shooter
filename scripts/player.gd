@@ -10,7 +10,6 @@ func _ready():
 func _physics_process(_delta):
 	velocity = dir * speed
 	if Input.is_action_just_pressed("left_mouse_button"):
-		print("shots fired")
 		shoot()
 	
 	look_at(get_global_mouse_position())
