@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://boy70pjf1mmaa"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_neyxu"]
+[ext_resource type="Texture2D" uid="uid://dap75os8c8bj4" path="res://Assets/black_circle.png" id="2_6k6jt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_shevn"]
+radius = 80.1561
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_03m8x"]
+radius = 19.0263
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_neyxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CircleShape2D_shevn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57472
+texture = ExtResource("2_6k6jt")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(23, 0)
+
+[node name="detect impact" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect impact"]
+shape = SubResource("CircleShape2D_03m8x")
+
+[connection signal="body_entered" from="detect impact" to="." method="_on_detect_impact_body_entered"]
