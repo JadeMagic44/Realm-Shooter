@@ -4,9 +4,9 @@ var loadEnemy = preload("res://scenes/enemy.tscn")
 var loadSpeed = preload("res://scenes/speedbuff.tscn")
 var loadShotgun = preload("res://scenes/shotgun.tscn")
 var minX = 16
-var maxX = 1152 - 16
+var maxX = 1136
 var minY = 16
-var maxY = 648 - 16
+var maxY = 632
 @onready var spawn_timer = $spawnTimer
 @onready var player = global.playerBody
 
@@ -14,12 +14,12 @@ var spawnTimer = 2
 
 func _on_spawn_timer_timeout():
 	var rng = randi_range(1,100)
-	if rng >= 1 and rng <= 10:
+	if rng >= 1 and rng <= 33:
 		var speedBuff = loadSpeed.instantiate()
 		spawn_location(150, speedBuff)
 		add_child(speedBuff)
 		print("Summoning Speed Buff")
-	elif rng >= 11 and rng <= 15 and global.shotgun == false:
+	elif rng >= 34 and rng <= 38 and global.shotgun == false:
 		var shotgun = loadShotgun.instantiate()
 		spawn_location(300, shotgun)
 		add_child(shotgun)

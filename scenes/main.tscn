@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctogvqqgata7d"]
+[gd_scene load_steps=10 format=3 uid="uid://ctogvqqgata7d"]
 
 [ext_resource type="PackedScene" uid="uid://cb5ohyh4ffm2y" path="res://scenes/spawner.tscn" id="1_057wg"]
 [ext_resource type="PackedScene" uid="uid://boy70pjf1mmaa" path="res://scenes/player.tscn" id="1_d41lm"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ve7qm"]
+[ext_resource type="PackedScene" uid="uid://cvt0o81tq5nv6" path="res://scenes/hud.tscn" id="2_ysxx3"]
 [ext_resource type="PackedScene" uid="uid://cvmax0uhhehg1" path="res://scenes/pause_menu.tscn" id="4_bw2bw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31cna"]
@@ -19,6 +20,8 @@ size = Vector2(14, 669.89)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ve7qm")
+
+[node name="Hud" parent="." instance=ExtResource("2_ysxx3")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_bw2bw")]
 offset_left = 442.0

@@ -8,16 +8,16 @@ script = ExtResource("1_2jeb2")
 [node name="play" type="Button" parent="."]
 offset_left = 494.0
 offset_top = 145.0
-offset_right = 538.0
+offset_right = 539.0
 offset_bottom = 180.0
 scale = Vector2(3.30652, 3.59602)
 text = "play"
 
 [node name="quit" type="Button" parent="."]
-offset_left = 495.0
-offset_top = 359.0
-offset_right = 544.0
-offset_bottom = 397.0
+offset_left = 493.0
+offset_top = 333.0
+offset_right = 542.0
+offset_bottom = 371.0
 scale = Vector2(3.19231, 3.14286)
 text = "quit"
 

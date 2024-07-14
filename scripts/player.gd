@@ -49,3 +49,6 @@ func shotgun():
 func _on_detect_impact_body_entered(body):
 	if body.has_method("enemy"):
 		get_tree().change_scene_to_file("res://scenes/dead.tscn")
+
+func player():
+	pass

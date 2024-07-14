@@ -4,6 +4,9 @@ var dir = Vector2()
 const SPEED = 300
 var bulletSelf = self
 
+func _ready():
+	global.bullet = self
+
 func _physics_process(delta):
 	var _collisonInfo = move_and_collide(dir.normalized() * delta * SPEED)
 
