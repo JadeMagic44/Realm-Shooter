@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs6l0r82ih3ai"]
+
+[ext_resource type="Script" path="res://scripts/speedbuff.gd" id="1_jdkru"]
+[ext_resource type="Texture2D" uid="uid://dbosjfvyrpbr6" path="res://Assets/green_circle.png" id="2_vwtox"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hpl0g"]
+radius = 16.0
+
+[node name="speedbuff" type="Node2D"]
+script = ExtResource("1_jdkru")
+
+[node name="detect collect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect collect"]
+shape = SubResource("CircleShape2D_hpl0g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3.27826e-07)
+scale = Vector2(0.59375, 0.5625)
+texture = ExtResource("2_vwtox")
+
+[connection signal="body_entered" from="detect collect" to="." method="_on_detect_collect_body_entered"]
