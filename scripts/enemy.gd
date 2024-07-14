@@ -16,6 +16,7 @@ func  _process(_delta):
 func _on_detect_impact_body_entered(body):
 	if body.has_method("bullet"):
 		score += 1
+		body.queue_free()
 		queue_free()
 
 func enemy():

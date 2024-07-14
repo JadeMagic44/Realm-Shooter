@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 var dir = Vector2()
 const SPEED = 300
+var bulletSelf = self
 
 func _physics_process(delta):
-	
 	var _collisonInfo = move_and_collide(dir.normalized() * delta * SPEED)
 
 
@@ -19,6 +19,4 @@ func bullet():
 
 
 func _on_area_2d_body_entered(body):
-	if body.has_method("enemy"):
-		queue_free()
-		global.score += 1
+	pass
