@@ -27,7 +27,4 @@ collision_mask = 9
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ioqh8")
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenNotifier2D" parent="."]
-
 [connection signal="body_entered" from="detect impact" to="." method="_on_detect_impact_body_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
