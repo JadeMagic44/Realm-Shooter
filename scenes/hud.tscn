@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvt0o81tq5nv6"]
+[gd_scene load_steps=2 format=3 uid="uid://djj7111yfuig2"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_dw4bp"]
 
@@ -11,3 +11,15 @@ offset_top = 4.0
 offset_right = 596.0
 offset_bottom = 31.0
 text = "score:"
+
+[node name="time" type="Label" parent="."]
+offset_left = 493.0
+offset_top = 5.0
+offset_right = 533.0
+offset_bottom = 28.0
+text = "0:00"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="countup"]
