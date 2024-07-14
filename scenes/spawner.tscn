@@ -10,7 +10,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="countTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="spawnTimer" to="." method="_on_spawn_timer_timeout"]
