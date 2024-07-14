@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8hyxfb2ys5gt"]
+[gd_scene load_steps=4 format=3 uid="uid://cs6l0r82ih3ai"]
 
 [ext_resource type="Script" path="res://scripts/speedbuff.gd" id="1_jdkru"]
 [ext_resource type="Texture2D" uid="uid://dbosjfvyrpbr6" path="res://Assets/green_circle.png" id="2_vwtox"]
