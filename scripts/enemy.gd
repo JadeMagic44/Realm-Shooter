@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 100
 var dir: Vector2
 var player: CharacterBody2D
-var score = global.score
+var bullet = global.bullet
 
 func  _process(_delta):
 	player = global.playerBody
@@ -15,8 +15,14 @@ func  _process(_delta):
 
 func _on_detect_impact_body_entered(body):
 	if body.has_method("bullet"):
-		score += 1
+		global.score += 1
+		body.queue_free()
 		queue_free()
+		
 
 func enemy():
 	pass
+
+
+func _on_visible_on_screen_enabler_2d_screen_exited():
+	queue_free()
