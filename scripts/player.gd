@@ -2,11 +2,17 @@ extends CharacterBody2D
 
 var bulletPath = preload("res://scenes/bullet.tscn")
 var dir: Vector2
+@onready var shots = $shots
+@onready var ba_dum_tss = $"Ba Dum Tss"
+
 
 func _ready():
 	global.playerBody = self
 
 func _physics_process(_delta):
+	if global.score >= 50:
+		global.shotgun	 = false
+		
 	velocity = dir * global.speed
 	if Input.is_action_just_pressed("left_mouse_button"):
 		if global.shotgun == true:
@@ -32,6 +38,7 @@ func movement():
 func shoot():
 	var bullet = bulletPath.instantiate()
 	get_parent().add_child(bullet)
+	shots.playing = true
 	bullet.position = $Marker2D.global_position
 	bullet.dir = get_global_mouse_position() - bullet.position
 	
@@ -43,9 +50,11 @@ func shotgun():
 		get_parent().add_child(bullet)
 		bullet.dir = aim_direction.rotated(radians) - bullet.position
 		bullet.position = $Marker2D.global_position
+		shots.playing = true
 		add_child(bullet)
 
 
 func _on_detect_impact_body_entered(body):
 	if body.has_method("enemy"):
 		get_tree().change_scene_to_file("res://scenes/dead.tscn")
+

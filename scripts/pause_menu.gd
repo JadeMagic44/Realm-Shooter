@@ -1,9 +1,6 @@
 extends Control
 
-@onready var main = $".."
-
-func _on_resume_pressed():
-	main.pauseMenu()
+@onready var main = $"../.."
 
 
 func _on_reset_pressed():

@@ -3,7 +3,10 @@ extends CharacterBody2D
 const SPEED = 100
 var dir: Vector2
 var player: CharacterBody2D
-var bullet = global.bullet
+@onready var death = $death
+
+func _ready():
+	global.enemyBody = self
 
 func  _process(_delta):
 	player = global.playerBody
@@ -16,6 +19,7 @@ func  _process(_delta):
 func _on_detect_impact_body_entered(body):
 	if body.has_method("bullet"):
 		global.score += 1
+		death.playing = true
 		body.queue_free()
 		queue_free()
 		

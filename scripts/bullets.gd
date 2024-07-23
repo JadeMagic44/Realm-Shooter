@@ -2,10 +2,9 @@ extends CharacterBody2D
 
 var dir = Vector2()
 const SPEED = 300
-var bulletSelf = self
 
 func _ready():
-	global.bullet = self
+	pass
 
 func _physics_process(delta):
 	var _collisonInfo = move_and_collide(dir.normalized() * delta * SPEED)
