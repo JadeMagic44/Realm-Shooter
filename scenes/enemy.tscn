@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ib5p3k8f3ofh"]
+[gd_scene load_steps=6 format=3 uid="uid://ib5p3k8f3ofh"]
 
-[ext_resource type="Texture2D" uid="uid://cm3w7k4wmf72p" path="res://Assets/black_square.png" id="1_w811n"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_yi037"]
+[ext_resource type="Texture2D" uid="uid://vaw26hx58m2d" path="res://Assets/enemy.png" id="2_aahr7"]
+[ext_resource type="AudioStream" uid="uid://bmv14l510kqrb" path="res://Audio/death.mp3" id="3_rmk77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnri1"]
 size = Vector2(38, 37)
@@ -18,7 +19,7 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_lnri1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_w811n")
+texture = ExtResource("2_aahr7")
 
 [node name="detect impact" type="Area2D" parent="."]
 collision_mask = 9
@@ -27,4 +28,13 @@ collision_mask = 9
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ioqh8")
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rmk77")
+volume_db = 5.0
+max_distance = 99999.0
+bus = &"SFX"
+
 [connection signal="body_entered" from="detect impact" to="." method="_on_detect_impact_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

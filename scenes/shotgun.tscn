@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://dudjntvlo2m5b"]
 
-[ext_resource type="Script" path="res://scripts/shotgun.gd" id="1_cmv48"]
-[ext_resource type="Texture2D" uid="uid://dv4agwoqlsrgs" path="res://Assets/Shotgun.png" id="2_1tbd5"]
+[ext_resource type="Script" path="res://scripts/shotgun.gd" id="1_gtwmx"]
+[ext_resource type="Texture2D" uid="uid://cmxrd54vyrntb" path="res://Assets/shotgun.png" id="2_ia75w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0t3vx"]
-radius = 18.0
+radius = 14.0
 
 [node name="Shotgun" type="Node2D"]
-script = ExtResource("1_cmv48")
+script = ExtResource("1_gtwmx")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -15,6 +15,12 @@ script = ExtResource("1_cmv48")
 shape = SubResource("CircleShape2D_0t3vx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1tbd5")
+position = Vector2(0, 1.19209e-07)
+scale = Vector2(0.875, 0.75)
+texture = ExtResource("2_ia75w")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_detect_collect_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
