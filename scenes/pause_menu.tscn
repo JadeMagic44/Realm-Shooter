@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvmax0uhhehg1"]
+[gd_scene load_steps=3 format=3 uid="uid://cvmax0uhhehg1"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_53gq2"]
+[ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="2_g2xyt"]
 
 [node name="PauseMenu" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,16 +13,23 @@ grow_vertical = 2
 script = ExtResource("1_53gq2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 2
+offset_right = 69.0
+offset_bottom = 67.0
+
+[node name="paused" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g2xyt")
+text = "Game Paused"
 
 [node name="reset" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g2xyt")
 text = "reset"
 
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g2xyt")
 text = "quit"
 
 [connection signal="pressed" from="VBoxContainer/reset" to="." method="_on_reset_pressed"]

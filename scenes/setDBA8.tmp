@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://doegakpsw8i4g"]
+
+[ext_resource type="Script" path="res://scenes/settings.gd" id="1_kjicc"]
+
+[node name="settings" type="Node2D"]
+script = ExtResource("1_kjicc")
+
+[node name="score" type="Label" parent="."]
+offset_left = 392.0
+offset_top = 144.0
+offset_right = 493.0
+offset_bottom = 193.0
+text = "null"
+
+[node name="time" type="Label" parent="."]
+offset_left = 587.0
+offset_top = 140.0
+offset_right = 681.0
+offset_bottom = 182.0
+text = "null"

@@ -1,30 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgo0hvxwpf4l2"]
+[gd_scene load_steps=3 format=3 uid="uid://dgo0hvxwpf4l2"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_2jeb2"]
+[ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="2_f7ohu"]
 
 [node name="start" type="Node2D"]
 script = ExtResource("1_2jeb2")
 
-[node name="play" type="Button" parent="."]
-offset_left = 518.0
-offset_top = 211.0
-offset_right = 559.0
-offset_bottom = 242.0
-scale = Vector2(3.30652, 2.95602)
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 445.0
+offset_top = 257.0
+offset_right = 660.0
+offset_bottom = 409.0
+alignment = 1
+
+[node name="play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_f7ohu")
 text = "play"
 expand_icon = true
 
-[node name="quit" type="Button" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 523.0
-offset_top = 413.0
-offset_right = 564.0
-offset_bottom = 444.0
-grow_horizontal = 2
-scale = Vector2(3.19231, 3.14286)
+[node name="settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_f7ohu")
+text = "settings"
+expand_icon = true
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_f7ohu")
 text = "quit"
 
-[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 486.0
+offset_top = 255.0
+offset_right = 747.0
+offset_bottom = 291.0
+theme_override_fonts/normal_font = ExtResource("2_f7ohu")
+text = "Realm Shooter"
+
+[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

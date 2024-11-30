@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dudjntvlo2m5b"]
 
 [ext_resource type="Script" path="res://scripts/shotgun.gd" id="1_gtwmx"]
-[ext_resource type="Texture2D" uid="uid://cmxrd54vyrntb" path="res://Assets/shotgun.png" id="2_ia75w"]
+[ext_resource type="Texture2D" uid="uid://psajeiiq5ani" path="res://Assets/SGI.png" id="2_0jo8b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0t3vx"]
 radius = 14.0
@@ -15,9 +15,9 @@ script = ExtResource("1_gtwmx")
 shape = SubResource("CircleShape2D_0t3vx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 1.19209e-07)
-scale = Vector2(0.875, 0.75)
-texture = ExtResource("2_ia75w")
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("2_0jo8b")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

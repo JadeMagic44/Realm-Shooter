@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_neyxu"]
 [ext_resource type="Texture2D" uid="uid://br05doiwiaiq4" path="res://Assets/player.png" id="2_bwpiw"]
-[ext_resource type="AudioStream" uid="uid://csy7ylt4k4aen" path="res://Audio/closed hi-hat sample.mp3" id="3_hgc8g"]
+[ext_resource type="AudioStream" uid="uid://drrrwtgvpahp5" path="res://Audio/laser.mp3" id="3_ci5tb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_shevn"]
 radius = 80.1561
@@ -24,7 +24,7 @@ rotation = 1.57472
 texture = ExtResource("2_bwpiw")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(23, 0)
+position = Vector2(35, 0)
 
 [node name="detect impact" type="Area2D" parent="."]
 
@@ -32,10 +32,9 @@ position = Vector2(23, 0)
 shape = SubResource("CircleShape2D_03m8x")
 
 [node name="shots" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_hgc8g")
+stream = ExtResource("3_ci5tb")
 volume_db = 5.0
 pitch_scale = 0.46
 max_distance = 9999.0
-bus = &"SFX"
 
 [connection signal="body_entered" from="detect impact" to="." method="_on_detect_impact_body_entered"]

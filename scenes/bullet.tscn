@@ -1,10 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://6ivi361ctu47"]
 
 [ext_resource type="Script" path="res://scripts/bullets.gd" id="1_e6buw"]
-[ext_resource type="Texture2D" uid="uid://fnwskc50gh5s" path="res://Assets/ammo.png" id="2_03jym"]
+[ext_resource type="Texture2D" uid="uid://4p4dlp5api4d" path="res://Assets/laser.png" id="2_j6t0h"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bhav8"]
-radius = 6.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_fsj1x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_imelb"]
 radius = 8.0
@@ -16,10 +15,10 @@ script = ExtResource("1_e6buw")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.19209e-07, 4.76837e-07)
 scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("2_03jym")
+texture = ExtResource("2_j6t0h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_bhav8")
+shape = SubResource("CircleShape2D_fsj1x")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 8

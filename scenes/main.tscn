@@ -13,13 +13,14 @@ script = ExtResource("1_ve7qm")
 position = Vector2(581, 328)
 scale = Vector2(1.01316, 1)
 
-[node name="PauseMenu" parent="player" instance=ExtResource("4_bw2bw")]
-offset_left = -107.584
-offset_top = -125.0
-offset_right = -107.584
-offset_bottom = -125.0
-scale = Vector2(3.28505, 3.16542)
-
 [node name="Hud" parent="player" instance=ExtResource("2_ysxx3")]
+
+[node name="PauseMenu" parent="player/Hud" instance=ExtResource("4_bw2bw")]
+visible = false
+offset_left = 407.0
+offset_top = 172.0
+offset_right = 426.0
+offset_bottom = 182.0
+scale = Vector2(3.28505, 3.16542)
 
 [node name="spawner" parent="." instance=ExtResource("1_057wg")]
