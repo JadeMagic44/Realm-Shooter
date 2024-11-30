@@ -2,7 +2,7 @@ extends Node2D
 
 var sec = 0
 
-func _process(delta):
+func _process(_delta):
 	if sec >= 15:
 		queue_free()
 

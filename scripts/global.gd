@@ -5,3 +5,5 @@ var playerBody: CharacterBody2D
 var enemyBody: CharacterBody2D
 var speed = 200
 var shotgun = false
+var pos = 1
+var paused = false

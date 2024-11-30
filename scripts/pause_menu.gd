@@ -2,7 +2,6 @@ extends Control
 
 @onready var main = $"../.."
 
-
 func _on_reset_pressed():
 	get_tree().reload_current_scene()
 
