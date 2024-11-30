@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmxrd54vyrntb"
-path="res://.godot/imported/Shotgun.png-1a5081ad34c1108aba1212a842db163d.ctex"
+uid="uid://bb5e5dttx4ckj"
+path="res://.godot/imported/BlackHole.png-2098863b468f173bfc169d82369790fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Shotgun.png"
-dest_files=["res://.godot/imported/Shotgun.png-1a5081ad34c1108aba1212a842db163d.ctex"]
+source_file="res://Assets/BlackHole.png"
+dest_files=["res://.godot/imported/BlackHole.png-2098863b468f173bfc169d82369790fa.ctex"]
 
 [params]
 
