@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+var devEnemy = load("res://Assets/enemy.png")
+var spaceEnemy = load("res://Assets/UFO2.png")
+var tankEnemy = load("res://Assets/RedTank.png")
+@onready var sprite = $Sprite2D
 const SPEED = 100
 var dir: Vector2
 var player: CharacterBody2D
@@ -12,7 +16,14 @@ func  _process(_delta):
 	player = global.playerBody
 	velocity = position.direction_to(player.position) * SPEED
 	
-	look_at(player.position)
+	match global.world:
+		0:
+			sprite.texture = devEnemy
+		1:
+			sprite.texture = spaceEnemy
+		2:
+			sprite.texture = tankEnemy
+	
 	move_and_slide()
 
 

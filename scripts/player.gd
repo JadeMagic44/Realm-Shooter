@@ -1,10 +1,14 @@
 extends CharacterBody2D
 
+var devPlayer = load("res://Assets/player.png")
+var spacePlayer = load("res://Assets/space dorito.png")
+var tankPlayer = load("res://Assets/GreenTank.png")
+@onready var sprite = $Sprite2D
 var bulletPath = preload("res://scenes/bullet.tscn")
 var dir: Vector2
 @onready var shots = $shots
 var paused = global.paused
-
+var n = false
 
 func _ready():
 	global.playerBody = self
@@ -12,7 +16,7 @@ func _ready():
 func _physics_process(_delta):
 	
 	if global.score >= 50:
-		global.shotgun	 = false
+		global.shotgun = false
 		
 	if global.speed >= 400 and global.score >= 50:
 		global.speed = 400
@@ -24,6 +28,13 @@ func _physics_process(_delta):
 			shoot()
 	if paused == false:
 		look_at(get_global_mouse_position())
+	match global.world:
+		0:
+			sprite.texture = devPlayer
+		1:
+			sprite.texture = spacePlayer
+		2:
+			sprite.texture = tankPlayer
 	move_and_slide()
 
 func player():
@@ -41,9 +52,10 @@ func movement():
 func shoot():
 	var bullet = bulletPath.instantiate()
 	get_parent().add_child(bullet)
-	shots.playing = true
+	shots.playing = n
 	bullet.position = $Marker2D.global_position
 	bullet.dir = get_global_mouse_position() - bullet.position
+	print(global.paused)
 	
 func shotgun():
 	var aim_direction = global_position.direction_to(get_global_mouse_position())
@@ -53,7 +65,7 @@ func shotgun():
 		get_parent().add_child(bullet)
 		bullet.dir = aim_direction.rotated(radians) - bullet.position
 		bullet.position = $Marker2D.global_position
-		shots.playing = true
+		shots.playing = n
 		add_child(bullet)
 
 

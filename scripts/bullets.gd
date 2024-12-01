@@ -1,5 +1,10 @@
 extends CharacterBody2D
-
+@onready var sound = $shots
+@onready var sprite = $Sprite2D
+var devBullet = load("res://Assets/ammo.png")
+var spaceBullet = load("res://Assets/laser.png")
+var devSound = load("res://Audio/gun-shot.wav")
+var spaceSound = load("res://Audio/laser.wav")
 var dir = Vector2()
 const SPEED = 300
 
@@ -8,8 +13,14 @@ func _ready():
 
 func _physics_process(delta):
 	var _collisonInfo = move_and_collide(dir.normalized() * delta * SPEED)
-
-
+	
+	match global.world:
+		0:
+			sprite.texture = devBullet
+			# sound.stream = devSound
+		1:
+			sprite.texture = spaceBullet
+			# sound.stream = spaceSound
 
 
 

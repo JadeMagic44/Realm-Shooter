@@ -4,9 +4,9 @@ var sec = 0
 var minute = 0
 @onready var pause_menu = $PauseMenu
 var paused = global.paused
-@onready var shotty = $shotgun
 
 func _process(_delta):
+	
 	if Input.is_action_just_pressed("esc"):
 		pauseMenu()
 	
@@ -21,10 +21,6 @@ func _process(_delta):
 	else:
 		$time.text = str(minute) + ":" + str(sec)
 	
-	if global.shotgun == true:
-		shotty.show()
-	else:
-		shotty.hide()
 
 func countup():
 	sec += 1
@@ -40,3 +36,4 @@ func pauseMenu():
 		Engine.time_scale = 0
 	
 	paused = !paused
+	
