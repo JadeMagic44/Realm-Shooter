@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj4pxsj7jpd01"]
+
+[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/Background.png" id="1_edqm8"]
+[ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="2_66vh3"]
+
+[sub_resource type="GDScript" id="GDScript_3sllo"]
+script/source = "extends Node2D
+
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/start.tscn\")
+"
+
+[node name="credits" type="Node2D"]
+script = SubResource("GDScript_3sllo")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(578, 322)
+texture = ExtResource("1_edqm8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 428.0
+offset_top = 259.0
+offset_right = 646.0
+offset_bottom = 335.0
+scale = Vector2(1.41556, 1.62717)
+
+[node name="art" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_66vh3")
+text = "Art made by: Flam3L0rd975
+"
+
+[node name="dev" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_66vh3")
+text = "developed by: StealthDrifter
+and Jade"
+
+[node name="back" type="Button" parent="."]
+offset_left = 1075.0
+offset_top = 597.0
+offset_right = 1120.0
+offset_bottom = 628.0
+theme_override_fonts/font = ExtResource("2_66vh3")
+text = "back"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

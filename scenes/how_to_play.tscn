@@ -1,15 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1ox80udp867m"]
+[gd_scene load_steps=8 format=3 uid="uid://b1ox80udp867m"]
 
 [ext_resource type="Script" path="res://scripts/how_to_play.gd" id="1_imj74"]
+[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/Background.png" id="2_8kvn1"]
 [ext_resource type="Texture2D" uid="uid://psajeiiq5ani" path="res://Assets/SGI.png" id="2_q4uxq"]
-[ext_resource type="Texture2D" uid="uid://vaw26hx58m2d" path="res://Assets/enemy.png" id="3_t87d4"]
 [ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="3_v6t8e"]
 [ext_resource type="Texture2D" uid="uid://bxw8las5dnba0" path="res://Assets/speed.png" id="4_oi3je"]
+[ext_resource type="Texture2D" uid="uid://dntcbgvee1vq1" path="res://Assets/UFO2.png" id="5_3bwwo"]
 [ext_resource type="Texture2D" uid="uid://bb5e5dttx4ckj" path="res://Assets/BlackHole.png" id="5_34mc8"]
 
 [node name="how to play" type="Node2D"]
 position = Vector2(-1, 3)
 script = ExtResource("1_imj74")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(573, 330)
+texture = ExtResource("2_8kvn1")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 55.0
@@ -28,19 +33,19 @@ texture = ExtResource("2_q4uxq")
 [node name="Label2" type="Label" parent="."]
 offset_left = 52.0
 offset_top = 287.0
-offset_right = 938.0
+offset_right = 1182.0
 offset_bottom = 310.0
 theme_override_fonts/font = ExtResource("3_v6t8e")
 text = "Collecting this will make you fire multiple bullets in a spread collecting this again will return you to firing one bullet"
 
 [node name="speed" type="Sprite2D" parent="."]
-position = Vector2(41, 349.5)
-scale = Vector2(0.75, 0.671875)
+position = Vector2(41.5, 349)
+scale = Vector2(1.65625, 1.625)
 texture = ExtResource("4_oi3je")
 
 [node name="enemy" type="Sprite2D" parent="."]
-position = Vector2(42, 190)
-texture = ExtResource("3_t87d4")
+position = Vector2(43, 191)
+texture = ExtResource("5_3bwwo")
 
 [node name="Label3" type="Label" parent="enemy"]
 offset_left = 15.0
@@ -60,7 +65,7 @@ offset_top = 13.0
 offset_right = 1101.0
 offset_bottom = 36.0
 theme_override_fonts/font = ExtResource("3_v6t8e")
-text = "if your score is 50 or above Blackholes start to spawn if you touch them the game ends they are on a timer after the timer ends they despawn"
+text = "if your score is 50 or above \"filler text\" start to spawn if you touch them the game ends they are on a timer after the timer ends they despawn"
 
 [node name="controls" type="Label" parent="."]
 offset_left = 54.0
@@ -85,6 +90,14 @@ text = "Back"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_v6t8e")
 text = "Main menu"
+
+[node name="goal" type="Label" parent="."]
+offset_left = 55.0
+offset_top = 478.0
+offset_right = 1028.0
+offset_bottom = 501.0
+theme_override_fonts/font = ExtResource("3_v6t8e")
+text = "Goal: clear each realm of enemies, after clearing a realm you will automaticaly be sent to the next realm"
 
 [connection signal="pressed" from="HBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="HBoxContainer/main menu" to="." method="_on_return_to_main_menu_pressed"]

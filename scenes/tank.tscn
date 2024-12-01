@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://3ftgfkvvetv4"]
+
+[ext_resource type="PackedScene" uid="uid://boy70pjf1mmaa" path="res://scenes/player.tscn" id="1_n2m1k"]
+[ext_resource type="Script" path="res://scenes/tank.gd" id="1_tkc7v"]
+[ext_resource type="PackedScene" uid="uid://cvt0o81tq5nv6" path="res://scenes/hud.tscn" id="2_cgrhr"]
+[ext_resource type="PackedScene" uid="uid://cvmax0uhhehg1" path="res://scenes/pause_menu.tscn" id="3_8k5ly"]
+[ext_resource type="PackedScene" uid="uid://cb5ohyh4ffm2y" path="res://scenes/spawner.tscn" id="4_0iarx"]
+
+[node name="tank" type="Node2D"]
+script = ExtResource("1_tkc7v")
+
+[node name="player" parent="." instance=ExtResource("1_n2m1k")]
+
+[node name="Hud" parent="player" instance=ExtResource("2_cgrhr")]
+
+[node name="PauseMenu" parent="player/Hud" instance=ExtResource("3_8k5ly")]
+
+[node name="spawner" parent="." instance=ExtResource("4_0iarx")]

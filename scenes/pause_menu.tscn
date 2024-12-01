@@ -27,10 +27,15 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_g2xyt")
 text = "reset"
 
+[node name="main menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "main menu"
+
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_g2xyt")
 text = "quit"
 
 [connection signal="pressed" from="VBoxContainer/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="VBoxContainer/main menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

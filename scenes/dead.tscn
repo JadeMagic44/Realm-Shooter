@@ -1,12 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://dit68dvly67oq"]
 
 [ext_resource type="Script" path="res://scripts/dead.gd" id="1_jv4nm"]
-[ext_resource type="PackedScene" uid="uid://cvt0o81tq5nv6" path="res://scenes/hud.tscn" id="2_om6wg"]
+[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/Background.png" id="2_ggmpf"]
 [ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="2_xg5q5"]
 [ext_resource type="AudioStream" uid="uid://dwgjrpufy708t" path="res://Audio/Gameover.mp3" id="3_tiop4"]
 
 [node name="dead" type="Node2D"]
 script = ExtResource("1_jv4nm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575.5, 323)
+scale = Vector2(1.00608, 1.01543)
+texture = ExtResource("2_ggmpf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 457.0
@@ -34,8 +39,6 @@ text = "Try again"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_xg5q5")
 text = "Quit"
-
-[node name="Hud" parent="." instance=ExtResource("2_om6wg")]
 
 [node name="death" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_tiop4")

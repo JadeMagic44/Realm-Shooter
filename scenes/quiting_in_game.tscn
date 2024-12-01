@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj8i550a2kpjq"]
+
+[ext_resource type="Script" path="res://scripts/quiting_in_game.gd" id="1_eqbul"]
+[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/Background.png" id="2_kngls"]
+[ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="3_nyhjp"]
+
+[node name="quiting in game" type="Node2D"]
+script = ExtResource("1_eqbul")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(581, 323)
+texture = ExtResource("2_kngls")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 471.0
+offset_top = 315.0
+offset_right = 742.0
+offset_bottom = 338.0
+theme_override_fonts/font = ExtResource("3_nyhjp")
+text = "Are you sure you want to exit?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 563.0
+offset_top = 350.0
+offset_right = 631.0
+offset_bottom = 390.0
+
+[node name="yes" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nyhjp")
+text = "yes"
+
+[node name="no" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nyhjp")
+text = "no"
+
+[connection signal="pressed" from="HBoxContainer/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="HBoxContainer/no" to="." method="_on_no_pressed"]

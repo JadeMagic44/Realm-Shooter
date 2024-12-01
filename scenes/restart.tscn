@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://0ufa3og3q5uv"]
+
+[ext_resource type="Script" path="res://scripts/restart.gd" id="1_8ec8b"]
+[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/Background.png" id="2_vafmh"]
+[ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="3_6yqos"]
+
+[node name="restart" type="Node2D"]
+script = ExtResource("1_8ec8b")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(578, 329)
+texture = ExtResource("2_vafmh")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 407.0
+offset_top = 294.0
+offset_right = 770.0
+offset_bottom = 317.0
+theme_override_fonts/font = ExtResource("3_6yqos")
+text = "do you want to continue for where you left off?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 542.0
+offset_top = 328.0
+offset_right = 608.0
+offset_bottom = 368.0
+
+[node name="yes" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6yqos")
+text = "yes"
+
+[node name="no" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6yqos")
+text = "no"
+
+[node name="back" type="Button" parent="."]
+offset_left = 1084.0
+offset_top = 607.0
+offset_right = 1129.0
+offset_bottom = 638.0
+theme_override_fonts/font = ExtResource("3_6yqos")
+text = "back"
+
+[connection signal="pressed" from="HBoxContainer/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="HBoxContainer/no" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

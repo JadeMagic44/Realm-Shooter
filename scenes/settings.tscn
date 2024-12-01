@@ -1,4 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b67k58ny0l1ra"]
+[gd_scene load_steps=4 format=3 uid="uid://b67k58ny0l1ra"]
+
+[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/Background.png" id="1_21vl3"]
+[ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="1_g5apm"]
 
 [sub_resource type="GDScript" id="GDScript_enwo1"]
 script/source = "extends Node2D
@@ -15,23 +18,30 @@ func _on_how_to_play_pressed() -> void:
 [node name="settings" type="Node2D"]
 script = SubResource("GDScript_enwo1")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574, 328)
+texture = ExtResource("1_21vl3")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 504.0
-offset_top = 256.0
-offset_right = 592.0
-offset_bottom = 336.0
+offset_left = 441.0
+offset_top = 262.0
+offset_right = 671.0
+offset_bottom = 355.0
 
 [node name="WIP" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g5apm")
 text = "More features coming soon..."
 horizontal_alignment = 1
 
 [node name="How to play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g5apm")
 text = "how to play"
 
 [node name="Main menu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g5apm")
 text = "Back"
 
 [connection signal="pressed" from="VBoxContainer/How to play" to="." method="_on_how_to_play_pressed"]
