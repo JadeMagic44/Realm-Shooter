@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-var devEnemy = load("res://Assets/enemy.png")
-var spaceEnemy = load("res://Assets/UFO2.png")
-var tankEnemy = load("res://Assets/RedTank.png")
+var devEnemy = load("res://Assets/enemy/enemy.png")
+var spaceEnemy = load("res://Assets/enemy/UFO.png")
+var tankEnemy = load("res://Assets/enemy/RedTank.png")
 @onready var sprite = $Sprite2D
 const SPEED = 100
 var dir: Vector2
@@ -23,6 +23,8 @@ func  _process(_delta):
 			sprite.texture = spaceEnemy
 		2:
 			sprite.texture = tankEnemy
+			sprite.rotation_degrees = 90
+			look_at(global.playerBody.global_position)
 	
 	move_and_slide()
 

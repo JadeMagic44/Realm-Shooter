@@ -10,7 +10,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("esc"):
 		pauseMenu()
 	
-	$score.text = "score:" + str(global.score)
+	$score.text = "kills:" + str(global.score)
 	if minute == 0:
 		if sec < 10:
 			$time.text = "0:0" + str(sec)

@@ -14,6 +14,8 @@ func _on_try_again_pressed():
 			get_tree().change_scene_to_file("res://scenes/main.tscn")
 		1:
 			get_tree().change_scene_to_file("res://scenes/space.tscn")
+		2:
+			get_tree().change_scene_to_file("res://scenes/tank.tscn")
 	global.score = 0
 	global.speed = 200
 	global.shotgun = false

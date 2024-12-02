@@ -1,7 +1,8 @@
 extends Node2D
 
-var devSpeed = load("res://Assets/runningMan.png")
-var spaceSpeed = load("res://Assets/speed.png")
+var devSpeed = load("res://Assets/power ups/speed/runningMan.png")
+var spaceSpeed = load("res://Assets/power ups/speed/chevron.png")
+var tankSpeed = load("res://Assets/power ups/speed/Jerry can.png")
 @onready var sprite = $Sprite2D
 var sec = 0
 
@@ -14,6 +15,8 @@ func _process(_delta):
 			sprite.texture = devSpeed
 		1:
 			sprite.texture = spaceSpeed
+		2:
+			sprite.texture = tankSpeed
 
 func _on_detect_collect_body_entered(body):
 	if body.has_method("player"):

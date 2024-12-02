@@ -1,7 +1,8 @@
 extends Node2D
 
-var devShotgun = load("res://Assets/Shotgun.png")
-var spaceShotgun = load("res://Assets/SGI.png")
+var devShotgun = load("res://Assets/power ups/shotgun/Shotgun.png")
+var spaceShotgun = load("res://Assets/power ups/shotgun/SGI.png")
+var tankShotgun = load("res://Assets/power ups/shotgun/tankShotgun.png")
 var sec = 0
 @onready var sprite = $Sprite2D
 
@@ -13,6 +14,8 @@ func _process(_delta):
 			sprite.texture = devShotgun
 		1:
 			sprite.texture = spaceShotgun
+		2:
+			sprite.texture = tankShotgun
 
 func _on_detect_collect_body_entered(body):
 	if body.has_method("player"):

@@ -1,10 +1,9 @@
 extends CharacterBody2D
 @onready var sound = $shots
 @onready var sprite = $Sprite2D
-var devBullet = load("res://Assets/ammo.png")
-var spaceBullet = load("res://Assets/laser.png")
-var devSound = load("res://Audio/gun-shot.wav")
-var spaceSound = load("res://Audio/laser.wav")
+var devBullet = load("res://Assets/player/bullets/ammo.png")
+var spaceBullet = load("res://Assets/player/bullets/laser.png")
+var tankBullet = load("res://Assets/player/bullets/cannon.png")
 var dir = Vector2()
 const SPEED = 300
 
@@ -21,6 +20,8 @@ func _physics_process(delta):
 		1:
 			sprite.texture = spaceBullet
 			# sound.stream = spaceSound
+		2:
+			sprite.texture = tankBullet
 
 
 

@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-var devPlayer = load("res://Assets/player.png")
-var spacePlayer = load("res://Assets/space dorito.png")
-var tankPlayer = load("res://Assets/GreenTank.png")
+var devPlayer = load("res://Assets/player/player.png")
+var spacePlayer = load("res://Assets/player/space dorito.png")
+var tankPlayer = load("res://Assets/player/GreenTank.png")
 @onready var sprite = $Sprite2D
 var bulletPath = preload("res://scenes/bullet.tscn")
 var dir: Vector2
