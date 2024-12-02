@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ib5p3k8f3ofh"]
+[gd_scene load_steps=5 format=3 uid="uid://ib5p3k8f3ofh"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_yi037"]
-[ext_resource type="Texture2D" uid="uid://dntcbgvee1vq1" path="res://Assets/UFO2.png" id="2_6jbqa"]
 [ext_resource type="AudioStream" uid="uid://bmv14l510kqrb" path="res://Audio/death.mp3" id="3_rmk77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnri1"]
@@ -21,7 +20,6 @@ shape = SubResource("RectangleShape2D_lnri1")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-0.500001, 7.5)
 scale = Vector2(0.671875, 0.796875)
-texture = ExtResource("2_6jbqa")
 
 [node name="detect impact" type="Area2D" parent="."]
 collision_mask = 9

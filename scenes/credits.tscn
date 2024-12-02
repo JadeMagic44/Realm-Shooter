@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bj4pxsj7jpd01"]
 
-[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/Background.png" id="1_edqm8"]
+[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/background and tiles/Background.png" id="1_edqm8"]
 [ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="2_66vh3"]
 
 [sub_resource type="GDScript" id="GDScript_3sllo"]

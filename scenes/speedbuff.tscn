@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8hyxfb2ys5gt"]
+[gd_scene load_steps=3 format=3 uid="uid://c8hyxfb2ys5gt"]
 
 [ext_resource type="Script" path="res://scripts/speedbuff.gd" id="1_jdkru"]
-[ext_resource type="Texture2D" uid="uid://bxw8las5dnba0" path="res://Assets/speed.png" id="2_v4ji3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hpl0g"]
 radius = 16.0
@@ -11,7 +10,6 @@ script = ExtResource("1_jdkru")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.519533, 0.511719)
-texture = ExtResource("2_v4ji3")
 
 [node name="detect collect" type="Area2D" parent="."]
 

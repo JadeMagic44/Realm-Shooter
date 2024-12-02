@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://0ufa3og3q5uv"]
 
 [ext_resource type="Script" path="res://scripts/restart.gd" id="1_8ec8b"]
-[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/Background.png" id="2_vafmh"]
+[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/background and tiles/Background.png" id="2_vafmh"]
 [ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="3_6yqos"]
 
 [node name="restart" type="Node2D"]

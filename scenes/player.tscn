@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://boy70pjf1mmaa"]
+[gd_scene load_steps=5 format=3 uid="uid://boy70pjf1mmaa"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_neyxu"]
-[ext_resource type="Texture2D" uid="uid://caxdlqfgshnfp" path="res://Assets/space dorito.png" id="2_c0ppi"]
 [ext_resource type="AudioStream" uid="uid://ljxl4xnivho4" path="res://Audio/gun-shot.wav" id="3_linqp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_shevn"]
@@ -24,7 +23,6 @@ shape = SubResource("CircleShape2D_shevn")
 position = Vector2(-9.53674e-07, -1.90735e-06)
 rotation = 1.57472
 scale = Vector2(0.68649, 0.624728)
-texture = ExtResource("2_c0ppi")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(35, 0)

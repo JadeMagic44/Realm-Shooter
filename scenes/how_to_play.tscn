@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://b1ox80udp867m"]
 
 [ext_resource type="Script" path="res://scripts/how_to_play.gd" id="1_imj74"]
-[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/Background.png" id="2_8kvn1"]
-[ext_resource type="Texture2D" uid="uid://psajeiiq5ani" path="res://Assets/SGI.png" id="2_q4uxq"]
+[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/background and tiles/Background.png" id="2_8kvn1"]
 [ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="3_v6t8e"]
-[ext_resource type="Texture2D" uid="uid://bxw8las5dnba0" path="res://Assets/speed.png" id="4_oi3je"]
-[ext_resource type="Texture2D" uid="uid://dntcbgvee1vq1" path="res://Assets/UFO2.png" id="5_3bwwo"]
-[ext_resource type="Texture2D" uid="uid://bb5e5dttx4ckj" path="res://Assets/BlackHole.png" id="5_34mc8"]
+[ext_resource type="Texture2D" uid="uid://cmxrd54vyrntb" path="res://Assets/power ups/shotgun/Shotgun.png" id="4_8r476"]
+[ext_resource type="Texture2D" uid="uid://c2i2a10k0caab" path="res://Assets/power ups/speed/runningMan.png" id="5_uddrn"]
+[ext_resource type="Texture2D" uid="uid://vaw26hx58m2d" path="res://Assets/enemy/enemy.png" id="6_bdtjo"]
+[ext_resource type="Texture2D" uid="uid://d0vinkdlevftj" path="res://Assets/enemy/landmine.png" id="7_irfqt"]
 
 [node name="how to play" type="Node2D"]
 position = Vector2(-1, 3)
@@ -17,35 +17,36 @@ position = Vector2(573, 330)
 texture = ExtResource("2_8kvn1")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 55.0
-offset_top = 365.0
-offset_right = 414.0
-offset_bottom = 388.0
+offset_left = 25.0
+offset_top = 369.0
+offset_right = 384.0
+offset_bottom = 392.0
 theme_override_fonts/font = ExtResource("3_v6t8e")
 text = "Collecting this will increase you speed"
 metadata/_edit_use_anchors_ = true
 
 [node name="shotgun" type="Sprite2D" parent="."]
-position = Vector2(43.75, 273.25)
+position = Vector2(26, 274)
 scale = Vector2(0.882812, 0.742187)
-texture = ExtResource("2_q4uxq")
+texture = ExtResource("4_8r476")
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 52.0
-offset_top = 287.0
-offset_right = 1182.0
-offset_bottom = 310.0
+offset_left = 15.0
+offset_top = 294.0
+offset_right = 1145.0
+offset_bottom = 317.0
 theme_override_fonts/font = ExtResource("3_v6t8e")
 text = "Collecting this will make you fire multiple bullets in a spread collecting this again will return you to firing one bullet"
+autowrap_mode = 2
 
 [node name="speed" type="Sprite2D" parent="."]
-position = Vector2(41.5, 349)
+position = Vector2(32, 349)
 scale = Vector2(1.65625, 1.625)
-texture = ExtResource("4_oi3je")
+texture = ExtResource("5_uddrn")
 
 [node name="enemy" type="Sprite2D" parent="."]
-position = Vector2(43, 191)
-texture = ExtResource("5_3bwwo")
+position = Vector2(29, 192)
+texture = ExtResource("6_bdtjo")
 
 [node name="Label3" type="Label" parent="enemy"]
 offset_left = 15.0
@@ -56,8 +57,8 @@ theme_override_fonts/font = ExtResource("3_v6t8e")
 text = "This is an enemy is if it touches you the game ends if you shoot it you gain 1 score"
 
 [node name="Landmine" type="Sprite2D" parent="."]
-position = Vector2(38, 109)
-texture = ExtResource("5_34mc8")
+position = Vector2(27, 96)
+texture = ExtResource("7_irfqt")
 
 [node name="Label" type="Label" parent="Landmine"]
 offset_left = 8.0
@@ -66,6 +67,7 @@ offset_right = 1101.0
 offset_bottom = 36.0
 theme_override_fonts/font = ExtResource("3_v6t8e")
 text = "if your score is 50 or above \"filler text\" start to spawn if you touch them the game ends they are on a timer after the timer ends they despawn"
+autowrap_mode = 2
 
 [node name="controls" type="Label" parent="."]
 offset_left = 54.0

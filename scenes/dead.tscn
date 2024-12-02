@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dit68dvly67oq"]
 
 [ext_resource type="Script" path="res://scripts/dead.gd" id="1_jv4nm"]
-[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/Background.png" id="2_ggmpf"]
+[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/background and tiles/Background.png" id="2_ggmpf"]
 [ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="2_xg5q5"]
 [ext_resource type="AudioStream" uid="uid://dwgjrpufy708t" path="res://Audio/Gameover.mp3" id="3_tiop4"]
 

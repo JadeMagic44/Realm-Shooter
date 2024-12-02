@@ -1,11 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbgftubvqij7e"]
 
-[ext_resource type="Texture2D" uid="uid://bb5e5dttx4ckj" path="res://Assets/BlackHole.png" id="1_7esic"]
+[ext_resource type="Texture2D" uid="uid://bb5e5dttx4ckj" path="res://Assets/enemy/BlackHole.png" id="1_7esic"]
 
 [sub_resource type="GDScript" id="GDScript_eb2tm"]
 resource_name = "landmine"
 script/source = "extends Area2D
 var sec = 0
+@onready var sprite = $Sprite2D
+var devLandmine = load(\"res://Assets/landmine.png\")
+var spaceLandmine = load(\"res://Assets/BlackHole.png\")
+var tankLandmine = load(\"res://Assets/anti-tank landmine.png\")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +20,13 @@ func _ready():
 func _process(_delta):
 	if sec >= 20:
 		queue_free()
+	match global.world:
+		0:
+			sprite.texture = devLandmine
+		1:
+			sprite.texture = spaceLandmine
+		2:
+			sprite.texture = tankLandmine
 
 
 func _on_body_entered(body):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dj8i550a2kpjq"]
 
 [ext_resource type="Script" path="res://scripts/quiting_in_game.gd" id="1_eqbul"]
-[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/Background.png" id="2_kngls"]
+[ext_resource type="Texture2D" uid="uid://bukcuv2herb00" path="res://Assets/background and tiles/Background.png" id="2_kngls"]
 [ext_resource type="FontFile" uid="uid://debarldh10cmi" path="res://fonts/80s-retro-future.ttf" id="3_nyhjp"]
 
 [node name="quiting in game" type="Node2D"]
