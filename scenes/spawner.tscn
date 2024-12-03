@@ -6,7 +6,6 @@
 script = ExtResource("1_vlbpg")
 
 [node name="spawnTimer" type="Timer" parent="."]
-wait_time = 2.0
 autostart = true
 
 [node name="countTimer" type="Timer" parent="."]
