@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var sound = $shots
+#@onready var sound = $shot
 @onready var sprite = $Sprite2D
 var devBullet = load("res://Assets/player/bullets/ammo.png")
 var spaceBullet = load("res://Assets/player/bullets/laser.png")
