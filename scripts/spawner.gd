@@ -11,13 +11,14 @@ var loadShotgun = preload("res://scenes/shotgun.tscn")
 @onready var spawn_timer = $spawnTimer
 @onready var player = global.playerBody
 
+var sixbynine = 1.777777777777778
 var spawnTimer = 1
 var count = 0 # for debug code
 func _on_spawn_timer_timeout(): # randomly decide what to spawn with constraints
 	var rng = randi_range(1,100)
-	#while(count < 1000): # Debugging code
-		#var speedBuff = loadEnemy.instantiate()
-		#spawn_location(600, 900, speedBuff)
+	#if(count < 1000): # Debugging code
+		#var speedBuff = loadSpeed.instantiate()
+		#spawn_location(150, 400, speedBuff)
 		#add_child(speedBuff)
 		#count +=1
 	if rng >= 1 and rng <= 10 and global.speed <= 300: # 10% chance spawn speed buff, stop spawning at 300 speed
@@ -48,18 +49,13 @@ func _on_count_timer_timeout(): # Enemy spawn timer reducer
 	
 func spawn_location(playerDistance, itemDistance, entity):
 	# create bounding boxes, playerDistance is the no spawn zone, while itemDistance is the spawn zone
-	var playerx1 = Vector2(player.position)[0] - playerDistance
-	var playerx2 = Vector2(player.position)[0] + playerDistance
-	var playery1 = Vector2(player.position)[1] - playerDistance / 1.777777777777778 # compensate 16:9 screen size
-	var playery2 = Vector2(player.position)[1] + playerDistance / 1.777777777777778
-	var itemx1 = Vector2(player.position)[0] - itemDistance
-	var itemx2 = Vector2(player.position)[0] + itemDistance
-	var itemy1 = Vector2(player.position)[1] - itemDistance / 1.777777777777778
-	var itemy2 = Vector2(player.position)[1] + itemDistance / 1.777777777777778
-	# God i hope we find a way to refactor this ^^^^^^^
+	var playerx = Vector2(player.position.x - playerDistance, player.position.x + playerDistance)
+	var playery = Vector2(player.position.y - playerDistance / sixbynine, player.position.y + playerDistance / sixbynine) # compensate 16:9 screen size
+	var itemx = Vector2(player.position.x - itemDistance, player.position.x + itemDistance)
+	var itemy = Vector2(player.position.y - itemDistance / sixbynine, player.position.y + itemDistance / sixbynine)
 	# Randomize entity position in item bounding box (itemDistance)
-	entity.position = Vector2(randi_range(itemx1, itemx2), randi_range(itemy1, itemy2))
+	entity.position = Vector2(randi_range(itemx.x, itemx.y), randi_range(itemy.x, itemy.y))
 	# Check if entity position is within player bounding box, if it is, reRandomize position within item bounding box
 	# and check again
-	while entity.position[0] > playerx1 and entity.position[0] < playerx2 and entity.position[1] > playery1 and entity.position[1] < playery2:
-		entity.position = Vector2(randi_range(itemx1, itemx2), randi_range(itemy1, itemy2))
+	while entity.position.x > playerx.x and entity.position.x < playerx.y and entity.position.y > playery.x and entity.position.y < playery.y:
+		entity.position = Vector2(randi_range(itemx.x, itemx.y), randi_range(itemy.x, itemy.y))
